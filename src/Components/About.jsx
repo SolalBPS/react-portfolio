@@ -3,10 +3,10 @@ import '../Style/App.css';
 
 function Home() {
     return (
-        <div className="App bg-body h-100">
+        <div className="App bg-body h-100 d-flex flex-column align-items-center justify-content-center">
             <img src={shrek} style={{ height: '200px', width: '200px' }} alt="logo" />
             <p className='fs-1 text-body'>
-                Edit <code>src/App.js</code> and save to reload.
+                Welcome to the Shrek's world
             </p>
             <a
                 className="App-link"
