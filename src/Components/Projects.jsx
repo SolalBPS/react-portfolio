@@ -11,19 +11,24 @@ function Projects(props) {
     // Requête les données au render
     useEffect(() => {
         const data = getProjects(props.language);
-        console.log(data)
         setInfos(data.infos);
         setTitle(data.title);
     }, [props.language]);
 
     return (
         <>
-            <div className="bg-body h-100 p-4 d-flex flex-row flex-row align-items-center justify-content-start text-body-secondary fs-5">
-                <div className="d-flex align-items-center justify-content-center w-25 ms-5">
-                    <img src={projects} width="60%" alt="profile" />
-                </div>
+            <div className="p-4 d-flex flex-column align-items-center flex-row text-body-secondary fs-5">
+                <h1 className="mb-5 mt-2">{title}</h1>
 
-                <InfosDisplay title={title} infos={infos} />
+                <div className='d-flex flex-row align-items-center justify-content-start'>
+                    <div className="d-flex align-items-center justify-content-center col-lg-4 col-12">
+                        <img src={projects} width="50%" alt="projects" />
+                    </div>
+
+                    <div className="col-lg-8 col-12">
+                        <InfosDisplay infos={infos} />
+                    </div>
+                </div>
             </div>
         </>
     );

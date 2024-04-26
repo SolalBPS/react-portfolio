@@ -31,7 +31,73 @@ export const getSkills = (lang) => {
                         text: "Je suis compétent en SQL et j'ai de l'expérience avec les systèmes de gestion de base de données MySQL, PostgreSQL et MariaDB. J'ai aussi de l'expérience avec l'ORM Doctrine.",
                     }
                 ],
-                individualSkills: ["fa-js", "fa-php", "fa-symfony", "fa-node-js", "fa-godot", "fa-mysql", "fa-mariadb", "fa-html5", "fa-css3", "fa-bootstrap"],
+                individualSkillsTitle: "Technologies & outils avec lesquelles je suis à l'aise",
+                individualSkills: [
+                    {
+                        title: "JavaScript",
+                        icon: "fa-brands fa-js"
+                    },
+                    {
+                        title: "PHP",
+                        icon: "fa-brands fa-php"
+                    },
+                    {
+                        title: "Symfony",
+                        icon: "fa-brands fa-symfony"
+                    },
+                    {
+                        title: "Node JS",
+                        icon: "fa-brands fa-node"
+                    },
+                    {
+                        title: "HTML5",
+                        icon: "fa-brands fa-html5"
+                    },
+                    {
+                        title: "CSS3",
+                        icon: "fa-brands fa-css3"
+                    },
+                    {
+                        title: "Bootstrap",
+                        icon: "fa-brands fa-bootstrap"
+                    },
+                    {
+                        title: "React",
+                        icon: "fa-brands fa-react"
+                    },
+                    {
+                        title: "Docker",
+                        icon: "fa-brands fa-docker"
+                    },
+                    {
+                        title: "Windows",
+                        icon: "fa-brands fa-windows"
+                    },
+                    {
+                        title: "Linux",
+                        icon: "fa-brands fa-linux"
+                    },
+                    {
+                        title: "Ubuntu",
+                        icon: "fa-brands fa-ubuntu"
+                    },
+                    {
+                        title: "Python",
+                        icon: "fa-brands fa-python"
+                    },
+                    {
+                        title: "Git",
+                        icon: "fa-brands fa-git"
+                    },
+                    {
+                        title: "Github",
+                        icon: "fa-brands fa-github"
+                    },
+                    {
+                        title: "Jira",
+                        icon: "fa-brands fa-jira"
+                    }
+                ],
                 title: "Mes compétences"
             }
         case 'en':
@@ -53,7 +119,73 @@ export const getSkills = (lang) => {
                         text: "I am competent in SQL and have experience with the MySQL, PostgreSQL and MariaDB database management systems. I also have experience with the ORM Doctrine.",
                     }
                 ],
-                individualSkills: ["fa-brands fa-js", "fa-brands fa-php", "fa-brands fa-symfony", "fa-brands fa-node-js", "fa-brands fa-godot", "fa-brands fa-blender", "fa-brands fa-mysql", "fa-brands fa-mariadb", "fa-brands fa-html5", "fa-brands fa-css3", "fa-brands fa-bootstrap"],
+                individualSkillsTitle: "Technologies & tools I am familiar with",
+                individualSkills: [
+                    {
+                        title: "JavaScript",
+                        icon: "fa-brands fa-js"
+                    },
+                    {
+                        title: "PHP",
+                        icon: "fa-brands fa-php"
+                    },
+                    {
+                        title: "Symfony",
+                        icon: "fa-brands fa-symfony"
+                    },
+                    {
+                        title: "Node JS",
+                        icon: "fa-brands fa-node"
+                    },
+                    {
+                        title: "HTML5",
+                        icon: "fa-brands fa-html5"
+                    },
+                    {
+                        title: "CSS3",
+                        icon: "fa-brands fa-css3"
+                    },
+                    {
+                        title: "Bootstrap",
+                        icon: "fa-brands fa-bootstrap"
+                    },
+                    {
+                        title: "React",
+                        icon: "fa-brands fa-react"
+                    },
+                    {
+                        title: "Docker",
+                        icon: "fa-brands fa-docker"
+                    },
+                    {
+                        title: "Windows",
+                        icon: "fa-brands fa-windows"
+                    },
+                    {
+                        title: "Linux",
+                        icon: "fa-brands fa-linux"
+                    },
+                    {
+                        title: "Ubuntu",
+                        icon: "fa-brands fa-ubuntu"
+                    },
+                    {
+                        title: "Python",
+                        icon: "fa-brands fa-python"
+                    },
+                    {
+                        title: "Git",
+                        icon: "fa-brands fa-git"
+                    },
+                    {
+                        title: "Github",
+                        icon: "fa-brands fa-github"
+                    },
+                    {
+                        title: "Jira",
+                        icon: "fa-brands fa-jira"
+                    }
+                ],
                 title: "My skills"
 
             };

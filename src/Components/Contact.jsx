@@ -20,7 +20,7 @@ function Contact(props) {
                 <h1 className="mb-3">{title}</h1>
 
                 <div className="d-flex flex-row h-100">
-                    <div className="d-flex flex-column align-items-center justify-content-start w-100">
+                    <div className="bg-body-tertiary border border-secondary rounded-4 p-4 d-flex flex-column align-items-center justify-content-start w-100">
                         {infos.map((info, index) => {
                             return (
                                 <div key={index} className="w-100 d-flex flex-row align-items-start justify-content-start gap-3">
@@ -28,7 +28,7 @@ function Contact(props) {
                                     <div className="w-100 d-flex flex-column align-items-start justify-content-start">
                                         <h3 className="border-bottom border-danger form-label">{info?.title}</h3>
                                         {info?.type === 'text-area'
-                                            ? <textarea className='w-100 form-control' placeholder={info?.placeholder}>{info?.text}</textarea> 
+                                            ? <textarea className='w-100 form-control' style={{ minHeight: '200px' }} placeholder={info?.placeholder}>{info?.text}</textarea> 
                                             : <input className='w-100 form-control' type={info?.type} placeholder={info?.placeholder}>{info?.text}</input>}
                                     </div>
                                 </div>

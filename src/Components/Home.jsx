@@ -18,10 +18,10 @@ function Home(props) {
 
     return (
         <>
-            <div className="bg-body p-4 d-flex flex-column flex-grow-1 align-items-center justify-content-start text-body-secondary fs-5">
+            <div className="p-4 d-flex flex-column flex-grow-1 align-items-center justify-content-start text-body-secondary fs-5">
                 <h1 className="mb-5 mt-2">{title}</h1>
 
-                <div className="d-flex flex-row flex-wrap pb-5 border-bottom">
+                <div className="d-flex flex-row flex-wrap pb-5 border-bottom border-secondary">
                     <div className="d-flex align-items-center justify-content-center col-lg-4 col-12">
                         <img src={me} width="300px" alt="profile" className="rounded-circle border border-5 border-danger"/>
                     </div>

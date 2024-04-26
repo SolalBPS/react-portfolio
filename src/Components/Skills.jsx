@@ -3,11 +3,12 @@ import '../Style/Skills.css';
 import laptop from "../Assets/laptop.png";
 import InfosDisplay from './InfosDisplay';
 import { getSkills } from '../APIs/skillsApi';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import BadgeIcon from './BadgeIcon.jsx';
 
 function Skills(props) {
     const [title, setTitle] = useState("");
     const [infos, setInfos] = useState([]);
+    const [individualSkillsSitle, setIndividualSkillsTitle] = useState("");
     const [individualSkills, setIndividualSkills] = useState([]);
 
     // Requête les données au render
@@ -15,26 +16,31 @@ function Skills(props) {
         const data = getSkills(props.language);
         setInfos(data.infos);
         setTitle(data.title);
+        setIndividualSkillsTitle(data.individualSkillsTitle);
         setIndividualSkills(data.individualSkills);
     }, [props.language]);
 
     return (
         <>
-            <div className="bg-body h-100 p-4 d-flex flex-column flex-row text-body-secondary fs-5">
-                <div className='d-flex flex-row align-items-center justify-content-start'>
-                    <div className="d-flex align-items-center justify-content-center w-25 ms-5">
-                        <img src={laptop} width="80%" alt="profile" />
+            <div className="p-4 d-flex flex-column align-items-center flex-row text-body-secondary fs-5">
+                <h1 className="mb-5 mt-2">{title}</h1>
+
+                <div className='d-flex flex-row align-items-center justify-content-start pb-5 border-bottom'>
+                    <div className="d-flex align-items-center justify-content-center col-lg-4 col-12">
+                        <img src={laptop} width="50%" alt="profile" />
                     </div>
 
-                    <InfosDisplay title={title} infos={infos} />
+                    <div className="col-lg-8 col-12">
+                        <InfosDisplay infos={infos} />
+                    </div>
                 </div>
 
-                <div className='d-flex flex-row justify-content-center flex-wrap'>
-                    {individualSkills.map((skill) => {
+                <h1 className="my-5">{individualSkillsSitle}</h1>
+
+                <div className='d-flex flex-row justify-content-center flex-wrap w-25 mb-5'>
+                    {individualSkills.map((skill, idx) => {
                         return (
-                            <div className='d-flex align-items-center justify-content-center icon hover border p-4 mx-2 rounded-circle skill-icon'>
-                                <FontAwesomeIcon icon={skill} style={{ fontSize: "100px" }} />
-                            </div>
+                            <BadgeIcon icon={skill.icon} tooltip={skill.title} index={idx} />
                         );
                     })}
                 </div>

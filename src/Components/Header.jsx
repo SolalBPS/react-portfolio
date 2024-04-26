@@ -20,7 +20,7 @@ function Header(props) {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-secondary position-sticky top-0 fs-5">
+            <nav className="navbar navbar-expand-lg bg-body-secondary position-sticky top-0 fs-5 z-3">
                 <div className="container-fluid">
                     <a className="nav-link me-3" href="/">
                         <img src={brand} alt='logo' width='50px' height='50px' />
