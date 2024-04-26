@@ -1,49 +1,23 @@
 import { useEffect, useState } from 'react';
 import '../Style/App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getContact } from '../APIs/contactApi';
 
-function Contact() {
-    const [title, setTitle] = useState("Contact me");
-    const [infos, setInfos] = useState([
-        {
-            icon: "fa-id-card",
-            title: "Name",
-            type: "text",
-            placeholder: "John Doe"
-        },
-        {
-            icon: "fa-at",
-            title: "E-mail",
-            type: "email",
-            placeholder: "john@doe.com"
-        },
-        {
-            icon: "fa-comment-dots",
-            title: "Comments or questions ?",
-            type: "text-area",
-            placeholder: "Write any question or comment here !"
-        },
-    ]);
+function Contact(props) {
+    const [title, setTitle] = useState("");
+    const [infos, setInfos] = useState([]);
 
     // Requête les données au render
     useEffect(() => {
-        fetch("https://api/home")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-
-                setTitle(data.title);
-                setInfos(data.infos);
-            })
-            .catch(error => {
-                console.error(error)
-            });
-    }, []);
+        const data = getContact(props.language);
+        setInfos(data.infos);
+        setTitle(data.title);
+    }, [props.language]);
     
     return (
         <>
-            <div className="bg-body p-4 d-flex flex-column flex-grow-1 align-items-center justify-content-start text-body-secondary fs-5">
-                <h1 className="mb-5 mt-2">{title}</h1>
+            <div className="w-100 d-flex flex-column justify-content-center align-items-center my-5">
+                <h1 className="mb-3">{title}</h1>
 
                 <div className="d-flex flex-row h-100">
                     <div className="d-flex flex-column align-items-center justify-content-start w-100">
@@ -60,6 +34,7 @@ function Contact() {
                                 </div>
                             );
                         })}
+                        <button className='btn btn-secondary mt-4 w-25'>Send</button>
                     </div>
                 </div>
             </div>

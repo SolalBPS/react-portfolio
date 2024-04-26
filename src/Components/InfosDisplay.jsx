@@ -4,7 +4,7 @@ import '../Style/App.css';
 function InfosDisplay(props) {
     return (
         <>
-            <div className="d-flex flex-column align-items-center justify-content-start w-75">
+            <div className="d-flex flex-column align-items-start align-items-sm-center justify-content-start w-100">
                 {props.title &&
                     <h1>{props.title}</h1>
                 }

@@ -15,10 +15,10 @@ function App() {
         localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
     }
 
-    const [language, setLanguage] = useState(localStorage.getItem('language') ?? 'light');
-    const changeLanguage = () => {
-        setLanguage(language === 'light' ? 'dark' : 'light')
-        localStorage.setItem('language', language === 'light' ? 'dark' : 'light');
+    const [language, setLanguage] = useState(localStorage.getItem('language') ?? 'en');
+    const changeLanguage = (language) => {
+        setLanguage(language)
+        localStorage.setItem('language', language);
     }
 
     return (
