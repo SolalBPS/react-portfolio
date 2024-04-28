@@ -31,7 +31,30 @@ export const getHome = (lang) => {
                         text: "Ma première expérience professionnelle a été un stage chez Delko Développement, une entreprise de franchise de garages, où j'ai créé une application web de gestion des congés pour l'entreprise. Je suis actuellement en alternance chez K-ZAM, une entreprise d'ERP/Applications web pour les professionnels.",
                     }
                 ],
-                title: "Bienvenue sur le portfolio de Solal"
+                title: "Bienvenue sur le portfolio de Solal",
+                likesTitle: "Ce que j'aime",
+                likes: [
+                    {
+                        icon: "fa-code",
+                        title: "Développer"
+                    },
+                    {
+                        icon: "fa-gamepad",
+                        title: "Jeux vidéos"
+                    },
+                    {
+                        icon: "fa-tv",
+                        title: "Séries"
+                    },
+                    {
+                        icon: "fa-music",
+                        title: "Musique"
+                    },
+                    {
+                        icon: "fa-book",
+                        title: "Mangas"
+                    },
+                ]
             }
         case 'en':
             return {
@@ -52,7 +75,30 @@ export const getHome = (lang) => {
                         text: "My first work experience was an internship at Delko Development, a car repair shop franchise company, where i created a leave management web application for the company. I am currently working as a full-stack web developper intern at K-ZAM, an ERP/Web applications for professionals company.",
                     }
                 ],
-                title: "Welcome to Solal's portfolio"
+                title: "Welcome to Solal's portfolio",
+                likesTitle: "What i like",
+                likes: [
+                    {
+                        icon: "fa-code",
+                        title: "Developing"
+                    },
+                    {
+                        icon: "fa-gamepad",
+                        title: "Video games"
+                    },
+                    {
+                        icon: "fa-tv",
+                        title: "Series"
+                    },
+                    {
+                        icon: "fa-music",
+                        title: "Music"
+                    },
+                    {
+                        icon: "fa-book",
+                        title: "Mangas"
+                    },
+                ]
 
             };
         default:

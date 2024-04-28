@@ -2,16 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import brand from '../Assets/brand.png';
 import french from '../Assets/french.png';
 import us from '../Assets/english.png';
-import '../Style/Header.css';
+import '../Style/App.css';
 import { useEffect, useState } from 'react';
 import { getNavbar } from '../APIs/navbarApi';
+import ProgressBar from './ProgressBar.jsx';
 
 function Header(props) {
     const [navigation, setNavigation] = useState([]);
+    const [languages, setLanguages] = useState([]);
 
     // Requête les données au render
     useEffect(() => {
-        setNavigation(getNavbar(props.language));
+        const data = getNavbar(props.language);
+        setNavigation(data.navigation);
+        setLanguages(data.languages);
     }, [props.language]);
 
     const changeTheme = () => {
@@ -20,8 +24,8 @@ function Header(props) {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-secondary position-sticky top-0 fs-5 z-3">
-                <div className="container-fluid">
+            <nav className="navbar navbar-expand-lg bg-body-secondary position-sticky top-0 fs-5 z-3 pb-0 shadow-sm d-flex flex-column">
+                <div className="container-fluid pb-2">
                     <a className="nav-link me-3" href="/">
                         <img src={brand} alt='logo' width='50px' height='50px' />
                     </a>
@@ -46,28 +50,30 @@ function Header(props) {
                             {/* Utilité */}
                             <div className='d-flex gap-5'>
                                 {/* Langues */}
-                                <div className="dropdown d-flex align-items-center">
-                                    <button className="bg-transparent border border-secondary rounded icon-dropdown dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src={props.language === 'fr' ? french : us} alt='french-flag' className='me-2' width='25px' height='25px' />
+                                <div className="dropdown-center d-flex align-items-center">
+                                    <button className="bg-transparent border-0 rounded icon-dropdown dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src={props.language === 'fr' ? french : us} alt={props.language} className='me-2' width='25px' height='25px' />
                                     </button>
                                     <ul className="dropdown-menu w-100">
-                                        <button className="dropdown-item" onClick={() => props.changeLanguage('fr')}>
-                                            <img src={french} alt='french-flag' className='me-2' width='20%' height='20%' /> French
-                                        </button>
-                                        <button className="dropdown-item" onClick={() => props.changeLanguage('en')}>
-                                            <img src={us} alt='us-flag' className='me-2' width='20%' height='20%' /> English
-                                        </button>
+                                        {languages.map((lang, idx) => {
+                                            return (
+                                                <button key={idx} className={`dropdown-item ${props.language === lang.id && 'active'}`} onClick={() => props.changeLanguage(lang.id)}>
+                                                    <img src={lang.id === 'fr' ? french : us} alt={lang.id} className='me-2' width='20%' height='20%' /> {lang.title}
+                                                </button>
+                                            )
+                                        })}
                                     </ul>
                                 </div>
 
                                 {/* Thème */}
-                                <button className="icon-btn nav-link d-flex align-items-center justify-content-center border border-secondary rounded" onClick={changeTheme}>
+                                <button className="icon-btn nav-link d-flex align-items-center justify-content-center rounded" onClick={changeTheme}>
                                     <FontAwesomeIcon icon={props.theme === 'light' ? 'fa-moon' : 'fa-sun'} />
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <ProgressBar />
             </nav>
         </>
     );

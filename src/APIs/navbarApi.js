@@ -13,35 +13,67 @@ export const getNavbar = (lang) => {
 
     switch (lang) {
         case 'fr':
-            return [
-                {
-                    url: "/",
-                    title: "Accueil",
-                },
-                {
-                    url: "/skills",
-                    title: "Compétences",
-                },
-                {
-                    url: "/projects",
-                    title: "Projets",
-                }
-            ];
+            return {
+                navigation: [
+                    {
+                        url: "/",
+                        title: "Accueil",
+                    },
+                    {
+                        url: "/skills",
+                        title: "Compétences",
+                    },
+                    {
+                        url: "/projects",
+                        title: "Projets",
+                    },
+                    {
+                        url: "/blog",
+                        title: "Blog",
+                    }
+                ],
+                languages: [
+                    {
+                        id: "fr",
+                        title: "Français",
+                    },
+                    {
+                        id: "en",
+                        title: "Anglais",
+                    }
+                ],
+            };
         case 'en':
-            return [
-                {
-                    url: "/",
-                    title: "Home",
-                },
-                {
-                    url: "/skills",
-                    title: "Skills",
-                },
-                {
-                    url: "/projects",
-                    title: "Projects",
-                }
-            ];
+            return {
+                navigation: [
+                    {
+                        url: "/",
+                        title: "Home",
+                    },
+                    {
+                        url: "/skills",
+                        title: "Skills",
+                    },
+                    {
+                        url: "/projects",
+                        title: "Projects",
+                    },
+                    {
+                        url: "/blog",
+                        title: "Blog",
+                    }
+                ],
+                languages: [
+                    {
+                        id: "fr",
+                        title: "French",
+                    },
+                    {
+                        id: "en",
+                        title: "English",
+                    }
+                ],
+            };
         default:
             return [];
     }

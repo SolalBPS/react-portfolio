@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import '../Style/Skills.css';
-import laptop from "../Assets/laptop.png";
+import laptop from '../Assets/laptop.png';
 import InfosDisplay from './InfosDisplay';
 import { getSkills } from '../APIs/skillsApi';
 import BadgeIcon from './BadgeIcon.jsx';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 function Skills(props) {
     const [title, setTitle] = useState("");
@@ -25,7 +26,7 @@ function Skills(props) {
             <div className="p-4 d-flex flex-column align-items-center flex-row text-body-secondary fs-5">
                 <h1 className="mb-5 mt-2">{title}</h1>
 
-                <div className='d-flex flex-row align-items-center justify-content-start pb-5 border-bottom'>
+                <div className="d-flex flex-row align-items-center justify-content-start pb-5 border-bottom">
                     <div className="d-flex align-items-center justify-content-center col-lg-4 col-12">
                         <img src={laptop} width="50%" alt="profile" />
                     </div>
@@ -37,10 +38,25 @@ function Skills(props) {
 
                 <h1 className="my-5">{individualSkillsSitle}</h1>
 
-                <div className='d-flex flex-row justify-content-center flex-wrap w-25 mb-5'>
-                    {individualSkills.map((skill, idx) => {
+                <div className="d-flex flex-row justify-content-center flex-wrap w-25 mb-5">
+                    {individualSkills.map((skill, index) => {
                         return (
-                            <BadgeIcon icon={skill.icon} tooltip={skill.title} index={idx} />
+                            <OverlayTrigger
+                                placement={index % 2 === 0 ? "left" : "right"}
+                                overlay={
+                                    <Tooltip className="fs-4">
+                                        {skill.title}
+                                    </Tooltip>
+                                }
+                            >
+                                <div
+                                    data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                                    data-aos-easing="ease-in-sine"
+                                    className='rounded-circle'
+                                >
+                                    <BadgeIcon icon={skill.icon} />
+                                </div>
+                            </OverlayTrigger>
                         );
                     })}
                 </div>

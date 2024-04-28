@@ -31,7 +31,7 @@ export const getSkills = (lang) => {
                         text: "Je suis compétent en SQL et j'ai de l'expérience avec les systèmes de gestion de base de données MySQL, PostgreSQL et MariaDB. J'ai aussi de l'expérience avec l'ORM Doctrine.",
                     }
                 ],
-                individualSkillsTitle: "Technologies & outils avec lesquelles je suis à l'aise",
+                individualSkillsTitle: "Quelques technologies & outils avec les quelles je suis familier",
                 individualSkills: [
                     {
                         title: "JavaScript",
@@ -119,7 +119,7 @@ export const getSkills = (lang) => {
                         text: "I am competent in SQL and have experience with the MySQL, PostgreSQL and MariaDB database management systems. I also have experience with the ORM Doctrine.",
                     }
                 ],
-                individualSkillsTitle: "Technologies & tools I am familiar with",
+                individualSkillsTitle: "Some technologies & tools I am familiar with",
                 individualSkills: [
                     {
                         title: "JavaScript",

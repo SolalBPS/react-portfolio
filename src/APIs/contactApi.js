@@ -19,13 +19,13 @@ export const getContact = (lang) => {
                         icon: "fa-id-card",
                         title: "Nom",
                         type: "text",
-                        placeholder: "Jérémy Courby"
+                        placeholder: "Solal Bompais"
                     },
                     {
                         icon: "fa-at",
                         title: "E-mail",
                         type: "email",
-                        placeholder: "jeremgaming@gmail.com"
+                        placeholder: "bompais.solal@gmail.com"
                     },
                     {
                         icon: "fa-comment-dots",
@@ -34,6 +34,7 @@ export const getContact = (lang) => {
                         placeholder: "Écrivez votre question ou commentaire ici !"
                     },
                 ],
+                submit: "Envoyer",
                 title: "Contactez moi"
             }
         case 'en':
@@ -58,6 +59,7 @@ export const getContact = (lang) => {
                         placeholder: "Write any question or comment here !"
                     },
                 ],
+                submit: "Send",
                 title: "Contact me"
 
             };

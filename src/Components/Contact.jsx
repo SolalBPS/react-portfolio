@@ -5,6 +5,7 @@ import { getContact } from '../APIs/contactApi';
 
 function Contact(props) {
     const [title, setTitle] = useState("");
+    const [submit, setSubmit] = useState("");
     const [infos, setInfos] = useState([]);
 
     // Requête les données au render
@@ -12,6 +13,7 @@ function Contact(props) {
         const data = getContact(props.language);
         setInfos(data.infos);
         setTitle(data.title);
+        setSubmit(data.submit);
     }, [props.language]);
     
     return (
@@ -23,7 +25,7 @@ function Contact(props) {
                     <div className="bg-body-tertiary border border-secondary rounded-4 p-4 d-flex flex-column align-items-center justify-content-start w-100">
                         {infos.map((info, index) => {
                             return (
-                                <div key={index} className="w-100 d-flex flex-row align-items-start justify-content-start gap-3">
+                                <div key={index} className="w-100 d-flex flex-row align-items-start justify-content-start gap-3 mb-2">
                                     <FontAwesomeIcon icon={info?.icon} className="text-danger mt-1" size="xl" />
                                     <div className="w-100 d-flex flex-column align-items-start justify-content-start">
                                         <h3 className="border-bottom border-danger form-label">{info?.title}</h3>
@@ -34,7 +36,7 @@ function Contact(props) {
                                 </div>
                             );
                         })}
-                        <button className='btn btn-secondary mt-4 w-25'>Send</button>
+                        <button className='btn bg-body border border-secondary rounded shadow-sm mt-3 w-25'>{submit}</button>
                     </div>
                 </div>
             </div>

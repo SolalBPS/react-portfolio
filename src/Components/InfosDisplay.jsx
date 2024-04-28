@@ -5,7 +5,6 @@ function InfosDisplay(props) {
     return (
         <>
             <div className="bg-body-tertiary border border-secondary rounded-4 p-4 d-flex flex-column align-items-start align-items-sm-center justify-content-start w-100">
-            {/* <div className="bg-body-tertiary bg-opacity-25 bg-blur border border-secondary rounded-4 p-4 d-flex flex-column align-items-start align-items-sm-center justify-content-start w-100"> */}
                 {props.title &&
                     <h1>{props.title}</h1>
                 }
