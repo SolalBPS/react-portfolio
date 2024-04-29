@@ -39,7 +39,7 @@ function Skills(props) {
                 <h1 className="my-5">{individualSkillsSitle}</h1>
 
                 <div className="d-flex flex-row justify-content-center flex-wrap w-25 mb-5">
-                    {individualSkills.map((skill, index) => {
+                    {individualSkills?.map((skill, index) => {
                         return (
                             <OverlayTrigger
                                 placement={index % 2 === 0 ? "left" : "right"}

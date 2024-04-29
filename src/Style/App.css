@@ -1,40 +1,55 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 p {
@@ -94,6 +109,7 @@ p {
     -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
     -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
+
 .bounce-hover:hover .icon-hover {
     animation-name: fa-bounce;
     animation-delay: var(--fa-animation-delay, 0s);
@@ -108,23 +124,26 @@ p {
     -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
     -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
 }
+
 [data-bs-theme="light"] {
     --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
+
 [data-bs-theme="dark"] {
     --bs-box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
     --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(255, 255, 255, 0.075);
     --bs-box-shadow-lg: 0 1rem 3rem rgba(255, 255, 255, 0.175);
 }
+
 .progress-container {
     width: 100%;
-    height: 5px;
+    height: 3px;
 }
 
 .progress-bar {
-    height: 5px;
+    height: 3px;
     width: 0%;
 }
 

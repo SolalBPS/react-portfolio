@@ -17,7 +17,7 @@ function Projects(props) {
 
     return (
         <>
-            <div className="p-4 d-flex flex-column align-items-center flex-row text-body-secondary fs-5">
+            <div className="p-4 h-100 d-flex flex-column align-items-center flex-row text-body-secondary fs-5" style={{minHeight: '85vh'}}>
                 <h1 className="mb-5 mt-2">{title}</h1>
 
                 <div className='d-flex flex-row align-items-center justify-content-start'>

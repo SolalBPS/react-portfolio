@@ -54,6 +54,29 @@ export const getHome = (lang) => {
                         icon: "fa-book",
                         title: "Mangas"
                     },
+                ],
+                timelineTitle: "Parcours",
+                timeline: [
+                    {
+                        date: "2019",
+                        title: "Baccalauréat STI2D Mention Bien"
+                    },
+                    {
+                        date: "2019-2021",
+                        title: "DUT Informatique à l'IUT d'Aix-en-Provence, stage de fin d'études chez Delko Développement"
+                    },
+                    {
+                        date: "2021-2022",
+                        title: "Licence Informatique à la faculté des sciences de Luminy, avec stage de fin d'études chez K-ZAM"
+                    },
+                    {
+                        date: "2022-2023",
+                        title: "Bachelor Développement Web et Mobile à ESIMED, en alternance chez K-ZAM"
+                    },
+                    {
+                        date: "2023-2025",
+                        title: "Master Informatique à ESIMED, en alternance chez K-ZAM"
+                    },
                 ]
             }
         case 'en':
@@ -97,6 +120,29 @@ export const getHome = (lang) => {
                     {
                         icon: "fa-book",
                         title: "Mangas"
+                    },
+                ],
+                timelineTitle: "Timeline",
+                timeline: [
+                    {
+                        date: "2019",
+                        title: "STI2D BAC with honors"
+                    },
+                    {
+                        date: "2019-2021",
+                        title: "Computer Science DUT at IUT d'Aix-en-Provence, with end-of-studies internship at Delko Développement"
+                    },
+                    {
+                        date: "2021-2022",
+                        title: "Computer Science License at Luminy's faculty of sciences, with end-of-studies internship at K-ZAM"
+                    },
+                    {
+                        date: "2022-2023",
+                        title: "Web and Mobile Development Bachelor at ESIMED, in internship at K-ZAM"
+                    },
+                    {
+                        date: "2023-2025",
+                        title: "Computer Science Master at ESIMED, in internship at K-ZAM"
                     },
                 ]
 

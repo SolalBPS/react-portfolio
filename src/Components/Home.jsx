@@ -6,12 +6,15 @@ import Contact from "./Contact";
 import { getHome } from "../APIs/homeApi";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import BadgeIcon from './BadgeIcon.jsx';
+import Timeline from "./Timeline.jsx";
 
 function Home(props) {
     const [title, setTitle] = useState("");
     const [infos, setInfos] = useState([]);
     const [likesTitle, setLikesTitles] = useState("");
     const [likes, setLikes] = useState([]);
+    const [timelineTitle, setTimelineTitle] = useState("");
+    const [timeline, setTimeline] = useState([]);
 
     // Requête les données au render
     useEffect(() => {
@@ -20,6 +23,8 @@ function Home(props) {
         setTitle(data.title);
         setLikesTitles(data.likesTitle);
         setLikes(data.likes);
+        setTimelineTitle(data.timelineTitle);
+        setTimeline(data.timeline);
     }, [props.language]);
 
     return (
@@ -38,10 +43,16 @@ function Home(props) {
                     </div>
                 </div>
 
+                {/* Timeline */}
+                <h1 className="my-5">{timelineTitle}</h1>
+                <div className="pb-5 border-bottom border-secondary w-100 d-flex align-items-center justify-content-center">
+                    <Timeline infos={timeline} />
+                </div>
+
                 {/* J'aime */}
                 <h1 className="my-5">{likesTitle}</h1>
                 <div className="d-flex flex-row justify-content-center flex-wrap gap-5 w-100 pb-5 border-bottom border-secondary">
-                    {likes.map((like, index) => {
+                    {likes?.map((like, index) => {
                         return (
                             <OverlayTrigger
                                 placement={index % 2 === 0 ? "bottom" : "top"}

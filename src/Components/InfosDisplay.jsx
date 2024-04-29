@@ -8,7 +8,7 @@ function InfosDisplay(props) {
                 {props.title &&
                     <h1>{props.title}</h1>
                 }
-                {props.infos.map((info, index) => {
+                {props.infos?.map((info, index) => {
                     return (
                         <div key={index} className="w-100 d-flex flex-row align-items-start justify-content-start gap-3">
                             <FontAwesomeIcon icon={info?.icon} className="text-danger mt-1" size="xl" />

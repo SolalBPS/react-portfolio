@@ -23,7 +23,7 @@ function Contact(props) {
 
                 <div className="d-flex flex-row h-100">
                     <div className="bg-body-tertiary border border-secondary rounded-4 p-4 d-flex flex-column align-items-center justify-content-start w-100">
-                        {infos.map((info, index) => {
+                        {infos?.map((info, index) => {
                             return (
                                 <div key={index} className="w-100 d-flex flex-row align-items-start justify-content-start gap-3 mb-2">
                                     <FontAwesomeIcon icon={info?.icon} className="text-danger mt-1" size="xl" />
