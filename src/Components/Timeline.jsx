@@ -1,13 +1,10 @@
 import '../Style/Timeline.css';
 
 function Timeline(props) {
-
     return (
         <>
-            {/* --------------------------------------------------- 
-            --- SOURCE: https://codepen.io/tutsplus/pen/GRYEwXX ---
-            ----------------------------------------------------*/}
-            <section class="timeline overflow-auto w-75 bg-body-secondary border border-secondary rounded-4">
+            {/* SOURCE: https://codepen.io/tutsplus/pen/GRYEwXX */}
+            <section className="timeline overflow-auto w-75 bg-body-secondary border border-secondary rounded-4">
                 <ol className='mb-0'>
                     {
                         props.infos?.map((time, index) => {

@@ -5,6 +5,7 @@ import Home from './Home';
 import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
+import Blog from './Blog';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 // Particles.js
@@ -45,6 +46,7 @@ function App(props) {
                         <Route path="/skills" element={<Skills theme={theme} language={language} />} />
                         <Route path="/projects" element={<Projects theme={theme} language={language} />} />
                         <Route path="/contact" element={<Contact theme={theme} language={language} />} />
+                        <Route path="/blog" element={<Blog theme={theme} language={language} />} />
                     </Routes>
                 </BrowserRouter>
 

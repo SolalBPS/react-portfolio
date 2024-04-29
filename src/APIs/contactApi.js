@@ -1,6 +1,6 @@
 export const getContact = (lang) => {
     // Simule une requête
-    // fetch(`https://portfolio-api/home?lang=${lang}`)
+    // return fetch(`https://portfolio-api/home?lang=${lang}`)
     //     .then(response => response.json())
     //     .then(data => {
     //         console.log(data)

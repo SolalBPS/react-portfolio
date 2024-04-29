@@ -26,15 +26,13 @@ function Header(props) {
         document.getElementById("progressBar").style.width = scrollProgress + "%";
 
         // Opacité de la navbar
-        document.getElementById("navBar").style.setProperty('--bs-bg-opacity', (100 - scrollProgress) / 100);
-        // Hue-rotate de la navbar
-        // document.getElementById("navBar").style.setBackdropFilter = `hue-rotate(${scrollProgress * 3.6}deg)`;
+        document.getElementById("navBar").style.setProperty('--bs-bg-opacity', scrollProgress / 100);
     }
     window.onscroll = onScroll;
 
     return (
         <>
-            <nav id="navBar" className="navbar navbar-expand-lg bg-blur bg-body-secondary position-sticky top-0 fs-5 z-3 pb-0 shadow-sm d-flex flex-column">
+            <nav id="navBar" className="navbar navbar-expand-lg bg-blur bg-body-secondary position-sticky top-0 fs-5 z-3 pb-0 d-flex flex-column" style={{'--bs-bg-opacity': '0'}}>
                 <div className="container-fluid pb-2">
                     <a className="nav-link me-3" href="/">
                         <img src={brand} alt='logo' width='50px' height='50px' />
@@ -84,8 +82,8 @@ function Header(props) {
                     </div>
                 </div>
                 {/* Progress bar */}
-                <div class="progress-container d-flex justify-content-center">
-                    <div class="progress-bar bg-danger" id="progressBar"></div>
+                <div className="progress-container d-flex justify-content-center">
+                    <div className="progress-bar bg-danger" id="progressBar"></div>
                 </div>
             </nav>
         </>
