@@ -5,43 +5,47 @@ import { getPostComments, deletePost, editPost } from '../APIs/blogApi';
 
 function Post(props) {
     // Datas
-    const [title, setTitle] = useState(props.title);
-    const [body, setBody] = useState(props.body);
+    const [title, setTitle] = useState(props.data.title);
+    const [body, setBody] = useState(props.data.body);
     const [comments, setComments] = useState([]);
     // Modes
     const [showDetails, setShowDetails] = useState(false);
     const [editMode, setEditMode] = useState(false);
     // Edit mode inputs
-    const [editedTitle, setEditedTitle] = useState(props.title);
-    const [editedBody, setEditedBody] = useState(props.body);
+    const [editedTitle, setEditedTitle] = useState(props.data.title);
+    const [editedBody, setEditedBody] = useState(props.data.body);
 
+    // Affiche les détails d'un post
     const displayPostDetails = () => {
         setShowDetails(!showDetails);
         if (editMode) setEditMode(false);
-        getPostComments(props.postId).then(data => {
+
+        getPostComments(props.data.id).then(data => {
             setComments(data);
         });
     }
 
+    // Supprime un post
     const removePost = () => {
         if (window.confirm('Do you really want to delete this post?')) {
-            deletePost(props.postId).then(data => {
-                if (data.isDeleted === true) {
-                    props?.deletePost(props.postId);
+            deletePost(props.data.id).then(response => {
+                if (response.isDeleted === true) {
+                    props?.deletePost(props.data.id);
                 }
             });
         }
     }
 
+    // Change le mode d'édition d'un post
     const changeEditMode = () => {
         setEditMode(!editMode);
     }
-
+    // Sauvegarde l'édition d'un post
     const savePost = () => {
         if (window.confirm('Do you really want to edit this post?')) {
-            editPost(props.postId, editedTitle, editedBody).then(data => {
-                setTitle(data.title)
-                setBody(data.body)
+            editPost(props.data.id, editedTitle, editedBody).then(response => {
+                setTitle(response.title)
+                setBody(response.body)
             });
         }
 
@@ -101,7 +105,7 @@ function Post(props) {
                     </button>
 
                     <div className='d-flex flex-row align-items-center gap-2'>
-                        {props.tags.map((tag, index) => {
+                        {props.data.tags.map((tag, index) => {
                             return (
                                 <span key={index} className='badge bg-danger'>{tag}</span>
                             )

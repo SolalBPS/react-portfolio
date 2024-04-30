@@ -30,8 +30,8 @@ function Contact(props) {
                                     <div className="w-100 d-flex flex-column align-items-start justify-content-start">
                                         <h3 className="border-bottom border-danger form-label">{info?.title}</h3>
                                         {info?.type === 'text-area'
-                                            ? <textarea className='w-100 form-control' style={{ minHeight: '200px' }} placeholder={info?.placeholder}>{info?.text}</textarea> 
-                                            : <input className='w-100 form-control' type={info?.type} placeholder={info?.placeholder}>{info?.text}</input>}
+                                            ? <textarea className='w-100 form-control' style={{ minHeight: '200px' }} placeholder={info?.placeholder} /> 
+                                            : <input className='w-100 form-control' type={info?.type} placeholder={info?.placeholder} />}
                                     </div>
                                 </div>
                             );

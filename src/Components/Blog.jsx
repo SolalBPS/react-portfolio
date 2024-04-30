@@ -3,16 +3,31 @@ import { getLastPosts } from '../APIs/blogApi';
 import { useEffect, useState } from 'react';
 import Post from './Post'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { checkAuth } from '../APIs/authApi';
 
-function Blog(props) {
+function Blog() {
     const [lastPosts, setLastPosts] = useState([]);
+
+    // Check le token au render
+    useEffect(() => {
+        if (!sessionStorage.getItem('token')) {
+            window.location.href = '/login';
+        } else {
+            // Check validité du token
+            checkAuth(sessionStorage.getItem('token')).then(data => {
+                if (data?.name === 'TokenExpiredError') {
+                    window.location.href = '/login';
+                }
+            });
+        }
+    }, []);
 
     // Requête les données au render
     useEffect(() => {
         getLastPosts(10).then(data => {
             setLastPosts(data)
         });
-    }, [props.language]);
+    }, []);
 
     const deletePost = (id) => {
         setLastPosts(lastPosts.filter(post => post.id !== id));
@@ -27,7 +42,7 @@ function Blog(props) {
                     {lastPosts.length > 0
                         ? lastPosts.map((post) => {
                             return (
-                                <Post key={post.id} body={post.body} title={post.title} tags={post.tags} postId={post.id} deletePost={deletePost} />
+                                <Post key={post.id} data={post} deletePost={deletePost} />
                             )
                         })
                         : <FontAwesomeIcon icon="fa-solid fa-spinner" spin className='fs-1' />
