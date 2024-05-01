@@ -4,9 +4,7 @@ export const getLastPosts = async (count) => {
         .then(data => {
             return data.posts;
         })
-        .catch(error => {
-            console.error(error)
-        });
+        .catch(error => console.error(error));
 };
 
 export const getPostComments = async (id) => {
@@ -15,9 +13,7 @@ export const getPostComments = async (id) => {
         .then(data => {
             return data.comments;
         })
-        .catch(error => {
-            console.error(error)
-        });
+        .catch(error => console.error(error));
 };
 
 export const deletePost = async (id) => {
@@ -28,9 +24,7 @@ export const deletePost = async (id) => {
         .then(data => {
             return data;
         })
-        .catch(error => {
-            console.error(error)
-        });
+        .catch(error => console.error(error));
 }
 
 export const editPost = async (id, title, body) => {
@@ -46,7 +40,23 @@ export const editPost = async (id, title, body) => {
         .then(data => {
             return data;
         })
-        .catch(error => {
-            console.error(error)
-        });
+        .catch(error => console.error(error));
+}
+
+export const createPost = async (title, body, tags, userId) => {
+    return fetch(`https://dummyjson.com/posts/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            title: title,
+            body: body,
+            tags: tags,
+            userId: userId
+        })
+    })
+        .then(res => res.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
 }

@@ -57,7 +57,7 @@ function Post(props) {
             <div className='d-flex flex-column align-items-start justify-content-center w-100 bg-body-tertiary rounded-4 my-3 p-3 shadow-sm'>
                 <div className='d-flex flex-row align-items-center justify-content-between w-100 pb-2 mb-2 border-bottom border-danger'>
                     <div className='d-flex flex-row gap-3 w-100'>
-                        <FontAwesomeIcon icon='fa-solid fa-user' size='xl' className='text-danger' />
+                        <FontAwesomeIcon icon='fa-solid fa-comments' size='xl' className='text-danger' />
                         {editMode
                             ? <input type='text' className='form-control w-100' value={editedTitle} onChange={(e) => setEditedTitle(e.target.value)} />
                             : <h3 className='mb-0'>{title}</h3>
@@ -100,7 +100,7 @@ function Post(props) {
 
                 {/* Bouton détails & Tags */}
                 <div className='d-flex flex-row justify-content-between w-100 fst-italic py-2'>
-                    <button className=' btn btn-outline-danger d-flex align-items-center justify-content-center rounded gap-2' onClick={displayPostDetails}>
+                    <button className='btn btn-outline-danger rounded' onClick={displayPostDetails}>
                         Details <FontAwesomeIcon icon={`fa-solid fa-arrow-${showDetails ? 'up' : 'down'}`} className='shake-hover' size='lg' />
                     </button>
 

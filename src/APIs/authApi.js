@@ -5,11 +5,15 @@ export const login = async (username, password) => {
         body: JSON.stringify({
             username: username,
             password: password,
-            expiresInMins: 10, // optional, defaults to 60
+            expiresInMins: 30, // optional, defaults to 60
         })
     })
-        .then(res => res.json())
-        .then(data => { return data });
+        // Ajoute le code de status à la réponse
+        .then(async res => { 
+            return { status: res.status, data: await res.json() }
+        })
+        .then(data => { return data })
+        .catch(err => { return err });
 };
 
 export const checkAuth = async (token) => {
@@ -34,7 +38,7 @@ export const getLoginTrans = (lang) => {
                         icon: "fa-user",
                         title: "Nom d'utilisateur",
                         type: "text",
-                        placeholder: "Bob04"
+                        placeholder: "Nom d'utilisateur",
                     },
                     password: {
                         icon: "fa-key",
@@ -43,6 +47,7 @@ export const getLoginTrans = (lang) => {
                     }
                 },
                 submit: "Connexion",
+                error: "Identifiants incorrects",
                 title: "Vous devez vous connecter pour accéder au Blog"
             }
         case 'en':
@@ -52,7 +57,7 @@ export const getLoginTrans = (lang) => {
                         icon: "fa-user",
                         title: "Username",
                         type: "text",
-                        placeholder: "Bob04"
+                        placeholder: "Username"
                     },
                     password: {
                         icon: "fa-key",
@@ -61,6 +66,7 @@ export const getLoginTrans = (lang) => {
                     }
                 },
                 submit: "Login",
+                error: "Incorrect credentials",
                 title: "You must login to access the Blog"
 
             };

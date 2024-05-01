@@ -32,10 +32,15 @@ function App(props) {
 
     // Authentification
     const handleLogin = async (username, password) => {
-        login(username, password).then(data => {
-            sessionStorage.setItem('token', data.token)
-            window.location.href = '/blog';
-        });
+        return login(username, password).then(data => {
+            if (data.status === 200) {
+                sessionStorage.setItem('token', data.data.token)
+                sessionStorage.setItem('userId', data.data.id)
+                window.location.href = '/blog';
+            } else {
+                return false;
+            }
+        })
     }
 
     return (
@@ -50,6 +55,7 @@ function App(props) {
                     changeLanguage={changeLanguage}
                     language={language}
                 />
+
                 <BrowserRouter>
                     <Routes>
                         <Route index element={<Home language={language} />} />
