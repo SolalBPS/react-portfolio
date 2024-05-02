@@ -36,7 +36,7 @@ function Contact(props) {
                                 </div>
                             );
                         })}
-                        <button className='btn btn-outline-secondary border border-secondary rounded shadow-sm mt-3 w-25'>{submit}</button>
+                        <button className='btn btn-outline-secondary rounded shadow-sm mt-3 w-25'>{submit}</button>
                     </div>
                 </div>
             </div>

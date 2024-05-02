@@ -58,7 +58,7 @@ function Login(props) {
                         </div>
                     </div>
 
-                    <button className='btn bg-body border border-secondary rounded shadow-sm mt-3 w-25' onClick={handleLogin}>{submit}</button>
+                    <button className='btn btn-outline-secondary rounded shadow-sm mt-3 w-25 d-flex justify-content-center' onClick={handleLogin}>{submit}</button>
                 </div>
             </div>
         </>
