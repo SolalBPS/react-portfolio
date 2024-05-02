@@ -53,10 +53,10 @@ function Blog() {
 
     return (
         <>
-            <div className="h-100 d-flex flex-column align-items-center flex-row text-body-secondary fs-5" style={{ minHeight: "85vh" }}>
-                <h1 className="my-5">Blog</h1>
+            <div className='h-100 d-flex flex-column align-items-center flex-row text-body-secondary fs-5' style={{ minHeight: '85vh' }}>
+                <h1 className='my-5'>Blog</h1>
 
-                <div className="w-50 d-flex flex-column justify-content-center align-items-end bg-body-secondary rounded-4 p-4 mb-5 border border-secondary">
+                <div className='w-50 d-flex flex-column justify-content-center align-items-end bg-body-secondary rounded-4 p-4 mb-5 border border-secondary'>
                     <button className='btn btn-outline-success rounded' onClick={changeCreateMode}>
                         New post <FontAwesomeIcon icon='fa-solid fa-plus' size='lg' />
                     </button>
@@ -69,7 +69,8 @@ function Blog() {
                                 <input type='text' className='form-control' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
                             </div>
                             <textarea className='form-control' placeholder='Body' value={body} onChange={(e) => setBody(e.target.value)} />
-                            <input type='text' className='form-control' placeholder='Tags (separated by ",")' value={tags.join(',')} onChange={(e) => setTags(e.target.value.split(','))} />
+                            {/* Gère les tags à partir d'une chaine (tags séparés par ',') */}
+                            <input type='text' className='form-control' placeholder="Tags (separated by ',')" value={tags.join(',')} onChange={(e) => setTags(e.target.value.split(','))} />
                             <button className='btn btn-outline-success w-25' onClick={sendPost}>
                                 Send <FontAwesomeIcon icon='fa-solid fa-paper-plane' size='lg' />
                             </button>

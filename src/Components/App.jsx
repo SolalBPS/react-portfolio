@@ -5,12 +5,12 @@ import Home from './Home';
 import Skills from './Skills';
 import Projects from './Projects';
 import Blog from './Blog';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { login } from '../APIs/authApi';
 import Login from './Login';
 // Particles.js
-import Particles from "@tsparticles/react";
+import Particles from '@tsparticles/react';
 import particlesOptionsDark from '../Assets/particlesOptionsDark.json'
 import particlesOptionsLight from '../Assets/particlesOptionsLight.json'
 
@@ -46,7 +46,7 @@ function App(props) {
     return (
         <>
             {props.particlesInit &&
-                <Particles id="particles-js" options={theme === 'dark' ? particlesOptionsDark : particlesOptionsLight} />
+                <Particles id='particles-js' options={theme === 'dark' ? particlesOptionsDark : particlesOptionsLight} />
             }
             <div className='d-flex flex-column' style={{ minHeight: '100vh' }} data-bs-theme={theme}>
                 <Header
@@ -59,10 +59,10 @@ function App(props) {
                 <BrowserRouter>
                     <Routes>
                         <Route index element={<Home language={language} />} />
-                        <Route path="/skills" element={<Skills language={language} />} />
-                        <Route path="/projects" element={<Projects language={language} />} />
-                        <Route path="/blog" element={<Blog />} />
-                        <Route path="/login" element={<Login language={language} handleLogin={handleLogin} />} />
+                        <Route path='/skills' element={<Skills language={language} />} />
+                        <Route path='/projects' element={<Projects language={language} />} />
+                        <Route path='/blog' element={<Blog />} />
+                        <Route path='/login' element={<Login language={language} handleLogin={handleLogin} />} />
                     </Routes>
                 </BrowserRouter>
 

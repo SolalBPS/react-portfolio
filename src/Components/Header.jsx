@@ -23,27 +23,27 @@ function Header(props) {
         let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         let scrollProgress = (winScroll / height) * 100;
-        document.getElementById("progressBar").style.width = scrollProgress + "%";
+        document.getElementById('progressBar').style.width = scrollProgress + '%';
 
         // Opacité de la navbar
-        document.getElementById("navBar").style.setProperty('--bs-bg-opacity', scrollProgress / 100);
+        document.getElementById('navBar').style.setProperty('--bs-bg-opacity', scrollProgress / 100);
     }
     window.onscroll = onScroll;
 
     return (
         <>
-            <nav id="navBar" className="navbar navbar-expand-lg bg-blur bg-body-secondary position-sticky top-0 fs-5 z-3 pb-0 d-flex flex-column" style={{'--bs-bg-opacity': '0'}}>
-                <div className="container-fluid pb-2">
-                    <a className="nav-link me-3" href="/">
+            <nav id='navBar' className='navbar navbar-expand-lg bg-blur bg-body-secondary position-sticky top-0 fs-5 z-3 pb-0 d-flex flex-column' style={{'--bs-bg-opacity': '0'}}>
+                <div className='container-fluid pb-2'>
+                    <a className='nav-link me-3' href='/'>
                         <img src={brand} alt='logo' width='50px' height='50px' />
                     </a>
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                    <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span className='navbar-toggler-icon'></span>
                     </button>
 
-                    <div className="collapse navbar-collapse">
-                        <div className="navbar-nav d-flex align-items-center justify-content-between w-100">
+                    <div className='collapse navbar-collapse'>
+                        <div className='navbar-nav d-flex align-items-center justify-content-between w-100'>
                             {/* Navigation */}
                             <div className='d-flex'>
                                 {navigation?.map((nav, idx) => {
@@ -58,11 +58,11 @@ function Header(props) {
                             {/* Utilité */}
                             <div className='d-flex gap-5'>
                                 {/* Langues */}
-                                <div className="dropdown-center d-flex align-items-center">
-                                    <button className="bg-transparent border-0 rounded icon-dropdown dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div className='dropdown-center d-flex align-items-center'>
+                                    <button className='bg-transparent border-0 rounded icon-dropdown dropdown-toggle d-flex align-items-center' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
                                         <img src={props.language === 'fr' ? french : us} alt={props.language} className='me-2' width='25px' height='25px' />
                                     </button>
-                                    <ul className="dropdown-menu w-100">
+                                    <ul className='dropdown-menu w-100'>
                                         {languages?.map((lang, idx) => {
                                             return (
                                                 <button key={idx} className={`dropdown-item ${props.language === lang.id && 'active'}`} onClick={() => props.changeLanguage(lang.id)}>
@@ -74,7 +74,7 @@ function Header(props) {
                                 </div>
 
                                 {/* Thème */}
-                                <button className="icon-btn nav-link d-flex align-items-center justify-content-center rounded" onClick={props.changeTheme}>
+                                <button className='icon-btn nav-link d-flex align-items-center justify-content-center rounded' onClick={props.changeTheme}>
                                     <FontAwesomeIcon icon={props.theme === 'light' ? 'fa-moon' : 'fa-sun'} />
                                 </button>
                             </div>
@@ -82,8 +82,8 @@ function Header(props) {
                     </div>
                 </div>
                 {/* Progress bar */}
-                <div className="progress-container d-flex justify-content-center">
-                    <div className="progress-bar bg-danger" id="progressBar"></div>
+                <div className='progress-container d-flex justify-content-center'>
+                    <div className='progress-bar bg-danger' id='progressBar'></div>
                 </div>
             </nav>
         </>
