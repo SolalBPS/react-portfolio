@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import laptop from '../Assets/laptop.png';
-import InfosDisplay from './InfosDisplay';
-import { getSkills } from '../APIs/skillsApi';
-import BadgeIcon from './BadgeIcon.jsx';
+import laptop from '../../Assets/laptop.png';
+import InfosDisplay from '../../Components/InfosDisplay.jsx';
+import { getSkills } from '../../APIs/skillsApi.js';
+import BadgeIcon from '../../Components/BadgeIcon.jsx';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 

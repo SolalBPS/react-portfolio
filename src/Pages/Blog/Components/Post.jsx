@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../Style/App.css';
+import '../../../Style/App.css';
 import { useState } from 'react';
-import { getPostComments, deletePost, editPost } from '../APIs/blogApi';
+import { getPostComments, deletePost, editPost } from '../../../APIs/blogApi';
 
 function Post(props) {
     // Datas

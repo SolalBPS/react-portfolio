@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import '../Style/App.css';
+import '../../../Style/App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getContact } from '../APIs/contactApi';
+import { getContact } from '../../../APIs/contactApi';
 
 function Contact(props) {
     const [title, setTitle] = useState('');

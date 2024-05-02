@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import '../Style/App.css';
-import me from '../Assets/me.jpg';
-import InfosDisplay from './InfosDisplay';
-import Contact from './Contact';
-import { getHome } from '../APIs/homeApi';
+import '../../Style/App.css';
+import me from '../../Assets/me.jpg';
+import InfosDisplay from '../../Components/InfosDisplay.jsx';
+import Contact from './Components/Contact.jsx';
+import { getHome } from '../../APIs/homeApi.js';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-import BadgeIcon from './BadgeIcon.jsx';
-import Timeline from './Timeline.jsx';
+import BadgeIcon from '../../Components/BadgeIcon.jsx';
+import Timeline from './Components/Timeline.jsx';
 
 function Home(props) {
     const [title, setTitle] = useState('');

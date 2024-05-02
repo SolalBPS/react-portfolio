@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Style/App.css';
-import App from './Components/App';
+import App from './Pages/App';
 
 // ASSETS LIBS
 import 'bootstrap/dist/css/bootstrap.min.css';

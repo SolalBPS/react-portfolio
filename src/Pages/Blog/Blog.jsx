@@ -1,9 +1,9 @@
-import '../Style/App.css';
-import { getLastPosts, createPost } from '../APIs/blogApi';
+import '../../Style/App.css';
+import { getLastPosts, createPost } from '../../APIs/blogApi';
 import { useEffect, useState } from 'react';
-import Post from './Post'
+import Post from './Components/Post'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { checkAuth } from '../APIs/authApi';
+import { checkAuth } from '../../APIs/authApi';
 
 function Blog() {
     const [lastPosts, setLastPosts] = useState([]);
@@ -53,7 +53,7 @@ function Blog() {
 
     return (
         <>
-            <div className='h-100 d-flex flex-column align-items-center flex-row text-body-secondary fs-5' style={{ minHeight: '85vh' }}>
+            <div className='h-100 d-flex flex-column align-items-center flex-row text-body-secondary fs-5'>
                 <h1 className='my-5'>Blog</h1>
 
                 <div className='w-50 d-flex flex-column justify-content-center align-items-end bg-body-secondary rounded-4 p-4 mb-5 border border-secondary'>

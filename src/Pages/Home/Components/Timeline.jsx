@@ -1,4 +1,4 @@
-import '../Style/Timeline.css';
+import '../../../Style/Timeline.css';
 
 function Timeline(props) {
     return (

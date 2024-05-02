@@ -1,8 +1,8 @@
-import '../Style/App.css';
+import '../../Style/App.css';
 import { useEffect, useState } from 'react';
-import projects from '../Assets/projects.png';
-import InfosDisplay from './InfosDisplay';
-import { getProjects } from '../APIs/projectsApi';
+import projects from '../../Assets/projects.png';
+import InfosDisplay from '../../Components/InfosDisplay';
+import { getProjects } from '../../APIs/projectsApi';
 
 function Projects(props) {
     const [title, setTitle] = useState('');

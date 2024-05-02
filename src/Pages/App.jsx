@@ -1,19 +1,18 @@
 import '../Style/App.css';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import Skills from './Skills';
-import Projects from './Projects';
-import Blog from './Blog';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
+import Home from './Home/Home.jsx';
+import Skills from './Skills/Skills.jsx';
+import Projects from './Projects/Projects.jsx';
+import Blog from './Blog/Blog';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import { login } from '../APIs/authApi';
-import Login from './Login';
+import { login } from '../APIs/authApi.js';
+import Login from './Login/Login.jsx';
 // Particles.js
 import Particles from '@tsparticles/react';
 import particlesOptionsDark from '../Assets/particlesOptionsDark.json'
 import particlesOptionsLight from '../Assets/particlesOptionsLight.json'
-
 
 function App(props) {
     // Theme
@@ -46,6 +45,7 @@ function App(props) {
 
     return (
         <>
+            {/* Background Particles */}
             {props.particlesInit &&
                 <Particles id='particles-js' options={theme === 'dark' ? particlesOptionsDark : particlesOptionsLight} />
             }

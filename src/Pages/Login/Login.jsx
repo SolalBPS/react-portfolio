@@ -1,7 +1,7 @@
-import '../Style/App.css';
+import '../../Style/App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import { getLoginTrans } from '../APIs/authApi';
+import { getLoginTrans } from '../../APIs/authApi';
 
 function Login(props) {
     const [title, setTitle] = useState('');
