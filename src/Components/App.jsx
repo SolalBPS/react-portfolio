@@ -37,6 +37,7 @@ function App(props) {
                 sessionStorage.setItem('token', data.data.token)
                 sessionStorage.setItem('userId', data.data.id)
                 window.location.href = '/blog';
+                return true;
             } else {
                 return false;
             }
