@@ -7,7 +7,7 @@ function Post(props) {
     // Datas
     const [title, setTitle] = useState(props.data.title);
     const [body, setBody] = useState(props.data.body);
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState(null);
     // Modes
     const [showDetails, setShowDetails] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -21,7 +21,7 @@ function Post(props) {
         if (editMode) setEditMode(false);
 
         getPostComments(props.data.id).then(data => {
-            setComments(data);
+            setComments(data ?? []);
         });
     }
 
@@ -116,7 +116,7 @@ function Post(props) {
                 {/* Commentaires */}
                 {showDetails && (
                     <div className='d-flex flex-column gap-3 border-top w-100 pt-2'>
-                        {comments.length > 0
+                        {comments
                             ? comments.map((comment, index) => {
                                 return (
                                     <div key={index} className='d-flex flex-column align-items-start justify-content-start bg-body-secondary rounded-4 p-3 shadow-sm'>
