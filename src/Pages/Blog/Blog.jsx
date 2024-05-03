@@ -42,14 +42,16 @@ function Blog(props) {
         });
     }, []);
 
+    // Supprime un post
     const deletePost = (id) => {
         setLastPosts(lastPosts.filter(post => post.id !== id));
     }
 
+    // Affiche la création
     const changeCreateMode = () => {
         setCreateMode(!createMode);
     }
-
+    // Créé un post
     const sendPost = () => {
         if (title && body) {
             setCreateMode(!createMode);

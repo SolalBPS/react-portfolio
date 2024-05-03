@@ -55,6 +55,7 @@ function Home(props) {
                     {likes?.map((like, index) => {
                         return (
                             <OverlayTrigger
+                                key={index}
                                 placement={index % 2 === 0 ? 'bottom' : 'top'}
                                 overlay={
                                     <Tooltip className='fs-4'>

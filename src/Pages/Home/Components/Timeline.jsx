@@ -9,7 +9,8 @@ function Timeline(props) {
                     {
                         props.infos?.map((time, index) => {
                             return (
-                                <li className='rounded-start'
+                                <li key={index}
+                                    className='rounded-start'
                                     data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}
                                     data-aos-easing='ease-in-sine'
                                 >
