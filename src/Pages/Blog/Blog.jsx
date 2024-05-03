@@ -1,11 +1,14 @@
 import '../../Style/App.css';
-import { getLastPosts, createPost } from '../../APIs/blogApi';
+import { getLastPosts, createPost, getTrad } from '../../APIs/blogApi';
 import { useEffect, useState } from 'react';
 import Post from './Components/Post'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { checkAuth } from '../../APIs/authApi';
 
-function Blog() {
+function Blog(props) {
+    // Trads
+    const [newPost, setNewPost] = useState({});
+    // Posts
     const [lastPosts, setLastPosts] = useState([]);
     // Cration de post
     const [createMode, setCreateMode] = useState(false);
@@ -24,8 +27,13 @@ function Blog() {
                     window.location.href = '/login';
                 }
             });
+
+            // Requête les données de trad.
+            getTrad(props.language).then(data => {
+                setNewPost(data);
+            });
         }
-    }, []);
+    }, [props.language]);
 
     // Requête les données au render
     useEffect(() => {
@@ -58,7 +66,7 @@ function Blog() {
 
                 <div className='w-50 d-flex flex-column justify-content-center align-items-end bg-body-secondary rounded-4 p-4 mb-5 border border-secondary'>
                     <button className='btn btn-outline-success rounded' onClick={changeCreateMode}>
-                        New post <FontAwesomeIcon icon='fa-solid fa-plus' size='lg' />
+                        {newPost.button} <FontAwesomeIcon icon={`fa-solid ${createMode ? 'fa-minus' : 'fa-plus'}`} size='lg' />
                     </button>
 
                     {/* Création */}
@@ -66,13 +74,13 @@ function Blog() {
                         <div className='w-100 d-flex flex-column align-items-center gap-3 mt-3 bg-body-tertiary rounded-4 p-3'>
                             <div className='w-100 d-flex flex-row align-items-center gap-3 pb-2 border-bottom border-danger'>
                                 <FontAwesomeIcon icon='fa-solid fa-comments' size='xl' className='text-danger' />
-                                <input type='text' className='form-control' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+                                <input type='text' className='form-control' placeholder={newPost.title} value={title} onChange={(e) => setTitle(e.target.value)} />
                             </div>
-                            <textarea className='form-control' placeholder='Body' value={body} onChange={(e) => setBody(e.target.value)} />
+                            <textarea className='form-control' placeholder={newPost.body} value={body} onChange={(e) => setBody(e.target.value)} />
                             {/* Gère les tags à partir d'une chaine (tags séparés par ',') */}
-                            <input type='text' className='form-control' placeholder="Tags (separated by ',')" value={tags.join(',')} onChange={(e) => setTags(e.target.value.split(','))} />
+                            <input type='text' className='form-control' placeholder={newPost.tags} value={tags.join(',')} onChange={(e) => setTags(e.target.value.split(','))} />
                             <button className='btn btn-outline-success w-25' onClick={sendPost}>
-                                Send <FontAwesomeIcon icon='fa-solid fa-paper-plane' size='lg' />
+                                {newPost.submit} <FontAwesomeIcon icon='fa-solid fa-paper-plane' size='lg' />
                             </button>
                         </div>
                     }

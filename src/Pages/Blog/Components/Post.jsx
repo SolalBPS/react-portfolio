@@ -29,9 +29,10 @@ function Post(props) {
     const removePost = () => {
         if (window.confirm('Do you really want to delete this post?')) {
             deletePost(props.data.id).then(response => {
-                if (response.isDeleted === true) {
+                // Aucun check pour permettre de suppr un nouveau post
+                // if (response.isDeleted === true) {
                     props?.deletePost(props.data.id);
-                }
+                // }
             });
         }
     }
@@ -44,8 +45,10 @@ function Post(props) {
     const savePost = () => {
         if (window.confirm('Do you really want to edit this post?')) {
             editPost(props.data.id, editedTitle, editedBody).then(response => {
-                setTitle(response.title)
-                setBody(response.body)
+                setTitle(editedTitle)
+                setBody(editedBody)
+                // setTitle(response.title)
+                // setBody(response.body)
             });
         }
 

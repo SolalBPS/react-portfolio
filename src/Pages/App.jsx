@@ -62,7 +62,7 @@ function App(props) {
                         <Route index element={<Home language={language} />} />
                         <Route path='/skills' element={<Skills language={language} />} />
                         <Route path='/projects' element={<Projects language={language} />} />
-                        <Route path='/blog' element={<Blog />} />
+                        <Route path='/blog' element={<Blog language={language} />} />
                         <Route path='/login' element={<Login language={language} handleLogin={handleLogin} />} />
                     </Routes>
                 </BrowserRouter>

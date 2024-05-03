@@ -60,3 +60,39 @@ export const createPost = async (title, body, tags, userId) => {
         })
         .catch(error => console.error(error));
 }
+
+export const getTrad = async (lang) => {
+    // Simule une requête
+    // return fetch(`https://portfolio-api/blog?lang=${lang}`)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data)
+    //         return data;
+    //     })
+    //     .catch(error => {
+    //         console.error(error)
+    //         return [];
+    //     });
+    
+    switch (lang) {
+        case 'fr':
+            return {
+                title: "Titre",
+                body: "Contenu",
+                tags: "Tags (séparés par des virgules)",
+                button: "Nouveau post",
+                submit: "Envoyer",
+            }
+        case 'en':
+            return {
+                title: "Title",
+                body: "Body",
+                tags: "Tags (separated by a coma)",
+                button: "New post",
+                submit: "Send"
+
+            };
+        default:
+            return [];
+    }
+}
